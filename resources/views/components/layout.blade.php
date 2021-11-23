@@ -7,8 +7,6 @@
     <title>My website</title>
 </head>
 <body>
-
-    @yield('banner')
-    @yield('content')
+    {{ $slot }}
 </body>
 </html>
