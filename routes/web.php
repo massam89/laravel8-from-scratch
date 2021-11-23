@@ -25,23 +25,8 @@ Route::get('/', function () {
 });
 
 Route::get('posts/{post}', function($slug){
-//neat way
 
-return view('post', ['post' => Post::find($slug)]);
+return view('post', ['post' => Post::findOrFail($slug)]);
 
-//ugly way
-    // if(!file_exists($path = __DIR__ . "/../resources/posts/{$slug}.html")){
-    //     return redirect('/');
-    //     // abort(404);
-    // }
-    //                                         //we can add number in second
-    // $post = cache()->remember("posts.{slug}", now()->addSecond(5), function() use ($path){
-    //     var_dump('file_get_content');
-    //     return file_get_contents($path);
-    // });  
-
-    // return view('posts', [
-    //     'post' => $post
-    // ]);
-})->where('post', '[A-z_/-]+');
+});
 
