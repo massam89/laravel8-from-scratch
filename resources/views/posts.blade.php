@@ -6,7 +6,7 @@
         </a>
         <p>{{ $post->excerpt }}</p>
 
-        <a href="#">{{ $post->category->name }}</a>
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
     @endforeach
 
 </x-layout>
