@@ -18,7 +18,8 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
 
-    $posts = Post::all();
+    // $posts = Post::all(); problem with lots of sql query
+    $posts = Post::with('category')->get();
 
     return view('posts', [
         'posts' => $posts
